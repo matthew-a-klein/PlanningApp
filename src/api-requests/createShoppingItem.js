@@ -1,16 +1,16 @@
-import axios from "axios";
-import { backendServerAddress } from "../backendconfig";
+import axios from 'axios';
+import {backendServerAddress} from '../backendconfig';
 
-const createShoppingItem = (itemName) => {
+const createShoppingItem = itemName => {
   return axios
     .post(`${backendServerAddress}/shoppinglist/`, {
       name: itemName,
       bought: false,
     })
-    .then((response) => {
-      return response.data;
+    .then(response => {
+      return response;
     })
-    .catch((error) => {
+    .catch(error => {
       return error;
     });
 };
