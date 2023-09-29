@@ -1,3 +1,3 @@
-import Config from 'react-native-config';
+import {API_URL} from '@env';
 
-export const backendServerAddress = Config.API_URL;
+export const backendServerAddress = API_URL;

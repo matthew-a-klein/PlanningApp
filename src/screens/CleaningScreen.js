@@ -1,9 +1,8 @@
-import React, {useEffect, useState, useCallback} from 'react';
+import React, {useEffect, useState} from 'react';
 
-import {View, Text, ScrollView} from 'react-native';
+import {View, Text} from 'react-native';
 import Button from '../components/Button';
-import {useFocusEffect} from '@react-navigation/native';
-import {styled} from 'nativewind';
+import StyledScrollView from '../components/StyledScrollVIew';
 import getCleaningList from '../api-requests/getCleaningList';
 import deleteCleaningItem from '../api-requests/deleteCleaningItem';
 
@@ -15,7 +14,7 @@ import refreshMonthlyShoppingTasks from '../api-requests/refreshMonthlyShoppingT
 const CleaningScreen = () => {
   const [cleaningList, setCleaningList] = useState([]);
   const [loading, setLoading] = useState(true);
-  const StyledScrollView = styled(ScrollView);
+
   useEffect(() => {
     updateCleaningList();
     setLoading(false);

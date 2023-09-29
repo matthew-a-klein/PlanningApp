@@ -1,8 +1,8 @@
 import React, {useEffect, useState, useCallback} from 'react';
 
-import {View, TextInput} from 'react-native';
+import {View, TextInput, ScrollView} from 'react-native';
 import {useFocusEffect} from '@react-navigation/native';
-
+import StyledScrollView from '../components/StyledScrollVIew';
 import Button from '../components/Button';
 import getTodoList from '../api-requests/getTodoList';
 import createTodoItem from '../api-requests/createTodoItem';
@@ -62,8 +62,9 @@ const TodoScreen = ({navigation}) => {
   return loading ? (
     <View></View>
   ) : (
-    <View
-      className={`flex-1 items-center bg-blue-200 dark:bg-slate-800 ${
+    <StyledScrollView
+      contentContainerStyle={{alignItems: 'center'}}
+      className={`flex-1 bg-blue-200 dark:bg-slate-800 ${
         exportVisible ? 'opacity-30' : ''
       }`}>
       <View className="h-8"></View>
@@ -107,7 +108,7 @@ const TodoScreen = ({navigation}) => {
           exportFunction={email => exportTodoList(email)}
         />
       </CustomModal>
-    </View>
+    </StyledScrollView>
   );
 };
 

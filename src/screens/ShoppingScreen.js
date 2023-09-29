@@ -2,7 +2,7 @@ import React, {useEffect, useState, useCallback} from 'react';
 
 import {View, TextInput} from 'react-native';
 import {useFocusEffect} from '@react-navigation/native';
-
+import StyledScrollView from '../components/StyledScrollVIew';
 import Button from '../components/Button';
 import CustomModal from '../components/CustomModal';
 import ListItem from '../components/ListItem';
@@ -63,8 +63,9 @@ const ShoppingScreen = ({navigation}) => {
   return loading ? (
     <View></View>
   ) : (
-    <View
-      className={`flex-1 items-center bg-blue-200 dark:bg-slate-800 ${
+    <StyledScrollView
+      contentContainerStyle={{alignItems: 'center'}}
+      className={`flex-1  bg-blue-200 dark:bg-slate-800 ${
         exportVisible ? 'opacity-30' : ''
       }`}>
       <View className="h-8"></View>
@@ -109,7 +110,7 @@ const ShoppingScreen = ({navigation}) => {
           exportFunction={email => exportShoppingList(email)}
         />
       </CustomModal>
-    </View>
+    </StyledScrollView>
   );
 };
 
